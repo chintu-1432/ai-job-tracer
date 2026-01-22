@@ -1,0 +1,148 @@
+/* ---------- GLOBAL ---------- */
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f4f6f8;
+  color: #333;
+}
+
+h2, h3, h4 {
+  margin-bottom: 10px;
+}
+
+/* ---------- LAYOUT ---------- */
+.container {
+  max-width: 900px;
+  margin: auto;
+  padding: 20px;
+}
+
+/* ---------- JOB CARD ---------- */
+.job-card {
+  background: white;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 15px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.job-card h3 {
+  margin: 0;
+  color: #0a66c2;
+}
+
+.job-meta {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 8px;
+}
+
+.job-desc {
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+/* ---------- MATCH BADGE ---------- */
+.match-badge {
+  display: inline-block;
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+
+.match-high {
+  background: #d4f5dd;
+  color: #0a7a2f;
+}
+
+.match-medium {
+  background: #fff3cd;
+  color: #856404;
+}
+
+.match-low {
+  background: #e2e3e5;
+  color: #555;
+}
+
+/* ---------- APPLY BUTTON ---------- */
+.apply-btn {
+  margin-top: 10px;
+  padding: 8px 14px;
+  background: #0a66c2;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.apply-btn:hover {
+  background: #004182;
+}
+
+/* ---------- FILTERS ---------- */
+.filters {
+  background: white;
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+
+.filters input,
+.filters select {
+  margin-right: 10px;
+  padding: 6px;
+}
+
+/* ---------- POPUP ---------- */
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.popup-box {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  width: 300px;
+}
+
+/* ---------- AI SIDEBAR ---------- */
+.ai-sidebar {
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 280px;
+  height: 100%;
+  background: white;
+  border-left: 1px solid #ddd;
+  padding: 12px;
+  box-shadow: -2px 0 6px rgba(0,0,0,0.1);
+}
+
+.ai-sidebar input {
+  width: 100%;
+  padding: 6px;
+  margin-bottom: 8px;
+}
+
+.ai-sidebar button {
+  width: 100%;
+  padding: 6px;
+  background: #198754;
+  color: white;
+  border: none;
+  border-radius: 6px;
+}
+.ai-sidebar button:hover {
+  background: #146c43;
+}
