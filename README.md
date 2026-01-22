@@ -1,291 +1,177 @@
-🚀 AI-Powered Job Tracker with Smart Matching
+# 🚀 AI-Powered Job Tracker with Smart Matching
 
-A full-stack web application that helps users discover jobs, match them intelligently with their resume using AI, and track application status in one place.
+A full-stack web application that helps users discover jobs, intelligently match them with their resume using AI, and track application status in one place.
 
-This project focuses on real product thinking, clean architecture, and practical AI usage, not gimmicks.
+---
 
-🔗 https://ai-job-tracer.vercel.app/
+## 🔗 Live Demo
+https://ai-job-tracer.vercel.app/
 
-📦 GitHub Repository
+## 📦 GitHub Repository
+https://github.com/chintu-1432/ai-job-tracer
 
-👉 This repository
+---
 
-🧠 Problem Statement
+## 🧠 Problem Statement
 
 Job seekers often:
+- Apply blindly without knowing fit
+- Lose track of applications
+- Waste time on irrelevant roles
 
-Apply to many jobs without knowing how well they match
+This project solves that by:
+- AI-based resume–job matching
+- Clear match scores with explanations
+- Simple application tracking dashboard
 
-Lose track of applications
+---
 
-Waste time reading irrelevant postings
+## ✨ Features
 
-This application solves that by:
+### 1️⃣ Job Feed & Filters
+- Job cards with title, company, location, type, description
+- Filters by:
+  - Job title
+  - Location
+  - Match score (High / Medium / All)
 
-Automatically matching jobs with a user’s resume
+### 2️⃣ Resume Upload
+- Upload single resume (TXT format)
+- Resume text stored in backend memory
+- Replace anytime
 
-Showing clear match scores with explanations
+### 3️⃣ AI-Powered Job Matching ⭐
+- Resume compared with job description
+- AI returns:
+  - Match score (0–100%)
+  - Match reasons
+- Color-coded badges:
+  - Green >70%
+  - Yellow 40–70%
+  - Gray <40%
 
-Tracking application progress in a simple dashboard
+### 4️⃣ Smart Application Tracking ⭐
+- Apply confirmation popup
+- Status tracking:
+  - Applied → Interview → Rejected / Offer
+- Dashboard view of applications
 
+### 5️⃣ AI Sidebar Assistant
+- Queries like:
+  - react jobs
+  - remote jobs
+  - highest match
+- Intelligent job suggestions
 
+---
 
-✨ Features
-1️⃣ Job Feed & Filters
+## 🏗️ Architecture
 
-Fetches jobs from an external API (mocked for demo)
-
-Displays job cards with:
-
-Title
-
-Company
-
-Location
-
-Job type
-
-Description
-
-Filters:
-
-Job title
-
-Location
-
-Match score (High / Medium / All)
-
-
-
-2️⃣ Resume Upload
-
-User uploads one resume (TXT format)
-
-Resume text is stored in backend memory
-
-Resume can be replaced anytime
-
-TXT format is used to keep parsing simple and reliable for this demo.
-
-
-
-3️⃣ AI-Powered Job Matching ⭐
-
-Each job is compared against the uploaded resume
-
-AI returns:
-
-Match score (0–100%)
-
-Reasons for match
-
-Match score is shown using color badges:
-
-🟢 Green: >70%
-
-🟡 Yellow: 40–70%
-
-⚪ Gray: <40%
-
-
-
-4️⃣ Smart Application Tracking ⭐
-
-Clicking Apply opens a confirmation popup
-
-On confirmation:
-
-Job is saved as Applied
-
-Timestamp is recorded
-
-User can update status:
-
-Applied → Interview → Rejected / Offer
-
-All applications are shown in a dashboard
-
-
-
-5️⃣ AI Sidebar Assistant
-
-A simple AI-assisted sidebar that:
-
-Answers queries like:
-
-react jobs
-
-remote jobs
-
-highest match
-
-Filters jobs intelligently
-
-Always returns useful suggestions (never empty)
-
-This is implemented as AI-assisted filtering, not fake chat responses.
-
-
-
-🏗️ Architecture
-High-Level Flow
 Frontend (React)
-   |
-   |  REST API calls
-   v
-Backend (Node.js + Fastify)
-   |
-   |  Job data + Resume text
-   |  AI Matching Service
-   v
-OpenAI API
+→ Backend (Node.js + Fastify)
+→ AI Matching Service (OpenAI)
 
+---
 
+## 🧠 AI Matching Logic
 
-Frontend Responsibilities
+1. Resume + job description sent to AI
+2. AI returns JSON:
+   - score
+   - reasons
+3. Frontend displays results clearly
 
-UI rendering
+Focus: explainable, reliable AI — not black box
 
-Resume upload
+---
 
-Filters & job display
+## ⚙️ Tech Stack
 
-Apply popup
+### Frontend
+- React (Vite)
+- Axios
+- Plain CSS
 
-AI sidebar interaction
+### Backend
+- Node.js
+- Fastify
+- OpenAI API
 
-Backend Responsibilities
+### Storage
+- In-memory (demo)
 
-Job fetching
+---
 
-Resume storage (in-memory)
+## ▶️ Run Locally
 
-AI matching logic
-
-Application tracking
-
-
-
-🧠 AI Matching Logic (Explained Simply)
-
-Resume text and job description are sent to AI
-
-AI is prompted to:
-
-Return a match score (0–100)
-
-Explain why it matched
-
-AI response is forced into strict JSON
-
-Frontend displays score + explanation
-
-Why this approach?
-
-Explainable results (not a black box)
-
-Consistent output
-
-Easy to scale later
-
-
-
-⚙️ Tech Stack
-Frontend
-
-React (Vite)
-
-Plain CSS (no UI frameworks)
-
-Axios
-
-Backend
-
-Node.js
-
-Fastify
-
-OpenAI API
-
-Storage
-
-In-memory (for demo simplicity)
-
-
-
-▶️ How to Run Locally
-Backend
+### Backend
+```bash
 cd backend
 npm install
 npm run dev
+```
 
+Runs on http://localhost:5000
 
-Runs on:
-
-http://localhost:5000
-
-Frontend
+### Frontend
+```bash
 cd frontend
 npm install
 npm run dev
+```
 
+Runs on http://localhost:5173
 
-Runs on:
+---
 
-http://localhost:5173
+## 🔐 Environment Variables
 
-🔐 Environment Variables
-Backend (.env.example)
+### Backend (.env.example)
+```
 PORT=5000
 OPENAI_API_KEY=your_key_here
+```
 
-Frontend (.env.example)
+### Frontend (.env.example)
+```
 VITE_API_BASE_URL=http://localhost:5000
+```
 
+---
 
-⚠️ No secrets are committed to the repository.
+## 📈 Scalability
 
+- Database instead of memory
+- Redis caching for AI scores
+- Batched AI calls
+- Auth + multi-user support
 
+---
 
-🧪 Edge Cases Handled
+## ⚖️ Trade-offs
 
-Resume not uploaded → UI shows friendly message
+- TXT resume instead of PDF (simplicity)
+- Mock job data for stability
 
-Backend returns error → frontend does not crash
+Future improvements:
+- PDF parsing
+- Real job APIs
+- Semantic AI matching
+- Mobile-first UI
 
-Filters removing all jobs → clear feedback shown
+---
 
-AI returns unexpected output → defensive checks applied
+## ✅ Checklist
 
+- Live link
+- Public repo
+- AI match scores
+- Apply popup
+- AI sidebar
+- No secrets committed
 
+---
 
-📈 Scalability Considerations
+## 🎯 Final Note
 
-If scaled to 10,000 users:
-
-Resume + application data would move to a database
-
-Redis could cache AI match results
-
-Job matching could be batched instead of per request
-
-AI calls could be rate-limited and queued
-
-
-
-⚖️ Trade-offs & Limitations
-Trade-offs
-
-TXT resume used instead of PDF (simplicity > complexity)
-
-Mock job API instead of live Adzuna (reliability for demo)
-
-What I’d Improve With More Time
-
-Proper PDF resume parsing
-
-Real external job API integration
-
-Semantic vector-based matching
-
-Authentication & user accounts
+This is a realistic MVP focused on clarity, usability, and real-world logic.
